@@ -70,8 +70,55 @@
           <p class="text-gray-600">
             Copyright &copy; 2023, 중부대학교 정보보호학과 한유정
           </p>
+          <div class="container mt-4">
+            <h1 class="text-4xl text-center">
+              <span class="text-gray-700">고생하는 </span
+              ><span class="text-indigo-400">제작자에게 </span
+              ><span class="text-blue-600">✨응원✨</span
+              ><span class="text-gray-700">해주세요!</span>
+            </h1>
+
+            <form id="chat-form" class="mt-4">
+              <div class="mb-3">
+                <label for="name" class="block text-gray-500">이름</label>
+                <input type="text" id="name" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="old" class="block text-gray-500">나이</label>
+                <input type="text" id="old" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="good" class="block text-gray-500"
+                  >응원 한마디</label
+                >
+                <input type="text" id="good" class="form-control" />
+              </div>
+
+              <div class="mt-4">
+                <input
+                  type="submit"
+                  value="완료!"
+                  class="btn bg-yellow-400 text-white"
+                  style="padding: 1px 50px; font-size: 1rem; border-width: 4px"
+                />
+              </div>
+            </form>
+
+            <table class="container table-auto mt-4">
+              <thead>
+                <tr class="bg-gray-400 text-white">
+                  <th class="px-4 py-2">이름</th>
+                  <th class="px-4 py-2">나이</th>
+                  <th class="px-4 py-2">응원 한마디</th>
+                  <th class="px-4 py-2">지우기</th>
+                </tr>
+              </thead>
+              <tbody id="chat-list"></tbody>
+            </table>
+          </div>
         </div>
       </footer>
     </div>
+    <script src="yooja.js"></script>
   </body>
 </html>
