@@ -62,13 +62,10 @@
       />
       <br />
       <p id="current-weather" class="font-bold text-lg text-blue-600"></p>
-      <!-- 날씨 정보를 표시할 위치 -->
 
       <p id="current-time" class="font-bold text-lg text-pink-500"></p>
-      <!-- 현재 시간을 표시할 위치 -->
 
       <p id="visit-count" class="font-bold text-lg text-green-500"></p>
-      <!-- 페이지 방문 횟수를 표시할 위치 -->
 
       <footer>
         <div class="container mx-auto py-12 px-10">
@@ -80,9 +77,8 @@
     </div>
     <script>
       function showCurrentWeather() {
-        // OpenWeatherMap API 호출 및 결과를 처리하는 로직
-        const API_KEY = '1d761fe079430734befbbcb04fd76b1f' // OpenWeatherMap API 키
-        const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=37.6550&lon=126.7644&appid=${API_KEY}` // API URL
+        const API_KEY = '1d761fe079430734befbbcb04fd76b1f'
+        const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=37.6550&lon=126.7644&appid=${API_KEY}`
 
         fetch(API_URL)
           .then((response) => response.json())
@@ -100,7 +96,6 @@
           })
       }
 
-      // 현재 시간을 표시하는 함수
       function showCurrentTime() {
         const currentTimeElement = document.getElementById('current-time')
         if (currentTimeElement) {
@@ -114,7 +109,7 @@
           currentTimeElement.textContent = '지금은 몇시? : ' + currentTime
         }
       }
-      // 페이지 방문 횟수를 업데이트하는 함수
+
       function updateVisitCount() {
         let visitCount = localStorage.getItem('visitCount')
         if (visitCount) {
@@ -130,17 +125,14 @@
         }
       }
 
-      // 페이지 로드 시 실행할 함수들
       function initializePage() {
         showCurrentWeather()
         showCurrentTime()
         updateVisitCount()
 
-        // 1초마다 현재 시간 갱신
         setInterval(showCurrentTime, 1000)
       }
 
-      // 페이지 로드 이벤트 리스너 등록
       window.addEventListener('DOMContentLoaded', initializePage)
     </script>
   </body>
